@@ -1,6 +1,6 @@
 import React, {Component, useState} from "react";
 import {BrowserRouter as Router,Link,Route,Routes} from "react-router-dom";
-import { useLocation } from "react-router-dom";
+
 import '../styles/App.css';
 
 class App extends Component {

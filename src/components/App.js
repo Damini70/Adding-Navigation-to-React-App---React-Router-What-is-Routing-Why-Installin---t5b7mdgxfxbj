@@ -9,7 +9,7 @@ class App extends Component {
 
         return(
             <div id="main">
-               <Router>
+            
         <Link to="/">Home</Link><br/>
         <Link to="/about">About</Link><br/>
         <Switch>
@@ -19,7 +19,7 @@ class App extends Component {
         </Switch>
         <LocationDisplay/>
 
-        </Router>
+      
             </div>
         )
     }

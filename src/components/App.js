@@ -12,11 +12,11 @@ class App extends Component {
                <Router>
         <Link to="/">Home</Link><br/>
         <Link to="/about">About</Link><br/>
-        <Routes>
+        <Switch>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/*" element={<div><h1>No match.</h1></div>}/>
-        </Routes>
+        </Switch>
         <LocationDisplay/>
 
         </Router>

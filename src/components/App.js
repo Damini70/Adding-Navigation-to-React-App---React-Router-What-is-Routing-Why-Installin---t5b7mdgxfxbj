@@ -1,53 +1,34 @@
-import React, {Component, useState} from "react";
-import {BrowserRouter as Router,Link,Route,Routes} from "react-router-dom";
-import  LocationDisplay from "./LocationDisplay";
+import React, { Component, useState } from "react";
+import "../styles/App.css";
+import { Link, Route, Switch, useLocation } from "react-router-dom";
+import LocationDisplayComp from "./LocationDisplay";
+function About() {
+  return <div>You are on the about page.</div>;
+}
+function Home() {
+  return <div>You are home.</div>;
+}
 
-import '../styles/App.css';
+function Invalid() {
+  return <div>No match</div>;
+}
 
 class App extends Component {
-    render() {
-
-        return(
-            <div id="main">
-            
-        <Link to="/">Home</Link><br/>
-        <Link to="/about">About</Link><br/>
+  render() {
+    return (
+      <div id="main">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         <Switch>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/*" element={<div><h1>No match.</h1></div>}/>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/" component={Invalid} />
         </Switch>
-        <LocationDisplay/>
-
-      
-            </div>
-        )
-    }
+        <LocationDisplayComp />
+      </div>
+    );
+  }
 }
-
 
 export default App;
-
-
-class Home extends Component {
-    render() {
-
-        return(
-            <div>
-                <h1>You are home.</h1>
-            </div>
-        )
-    }
-}
-
-class About extends Component {
-    render() {
-
-        return(
-            <div>
-                 <h1>You are on the about page.</h1>
-            </div>
-        )
-    }
-}
-
+export const LocationDisplay = LocationDisplayComp;
